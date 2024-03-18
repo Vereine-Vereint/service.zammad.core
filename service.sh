@@ -36,6 +36,15 @@ source ./borg/borg.sh
 # COMMANDS
 
 # ATTACHMENTS
+att_setup() {
+  mkdir -p $SERVICE_DIR/volumes/backup
+  mkdir -p $SERVICE_DIR/volumes/elasticsearch
+  mkdir -p $SERVICE_DIR/volumes/postgresql
+  mkdir -p $SERVICE_DIR/volumes/redis
+  mkdir -p $SERVICE_DIR/volumes/storage
+  mkdir -p $SERVICE_DIR/volumes/var
+  sudo chmod -R 777 $SERVICE_DIR/volumes
+}
 
 # FUNCTIONS
 
