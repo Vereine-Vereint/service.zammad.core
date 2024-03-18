@@ -1,5 +1,5 @@
 SERVICE_NAME="zammad"
-SERVICE_VERSION="v0.1"
+SERVICE_VERSION="v1.0"
 
 set -e
 
