@@ -26,6 +26,9 @@ POSTGRES_DB=zammad_production
 
 REDIS_VERSION=7.0.5-alpine
 REDIS_URL=redis://zammad-redis:6379
+
+NGINX_SERVER_SCHEME=https
+NGINX_PORT=8080
 set +o allexport
 
 # CORE
