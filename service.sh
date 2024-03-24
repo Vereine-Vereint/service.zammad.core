@@ -1,3 +1,4 @@
+#!/bin/bash
 SERVICE_NAME="zammad"
 SERVICE_VERSION="v1.0"
 
