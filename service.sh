@@ -1,6 +1,6 @@
 #!/bin/bash
 SERVICE_NAME="zammad"
-SERVICE_VERSION="v1.0"
+SERVICE_VERSION="v2.0"
 
 set -e
 
@@ -34,8 +34,6 @@ set +o allexport
 
 # CORE
 source ./core/core.sh
-# BORG
-source ./borg/borg.sh
 
 # COMMANDS
 
