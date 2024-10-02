@@ -36,6 +36,16 @@ set +o allexport
 source ./core/core.sh
 
 # COMMANDS
+commands+=([exec-rails]=":Enter rails console")
+cmd_exec-rails() {
+  # docker compose run --rm zammad-railsserver rails c
+  docker compose exec -it zammad-railsserver /docker-entrypoint.sh rails c
+# Setting.set('ui_ticket_create_default_type', "email-out")
+# Setting.set('ui_ticket_create_notes', {
+#   :"phone-in"=>"Du erstellst gerade eine Notiz zu einem eingehenden Telefonanruf.",
+#   :"phone-out"=>"Du erstellst gerade eine Notiz zu einem ausgehenden Telefonanruf.",
+# })
+}
 
 # ATTACHMENTS
 att_setup() {
