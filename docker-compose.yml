@@ -130,6 +130,10 @@ services:
   zammad-scheduler:
     <<: *zammad-service
     command: ["zammad-scheduler"]
+    networks:
+      - default
+      - traefik
+
 
   zammad-websocket:
     <<: *zammad-service
