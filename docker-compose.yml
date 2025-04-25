@@ -47,24 +47,24 @@ x-shared:
       - zammad-redis
 
 services:
-  zammad-backup:
-    command: ["zammad-backup"]
-    depends_on:
-      - zammad-railsserver
-      - zammad-postgresql
-    entrypoint: /usr/local/bin/backup.sh
-    environment:
-      <<: *zammad-environment
-      BACKUP_TIME: "03:00"
-      HOLD_DAYS: "10"
-      TZ: ${TIMEZONE_DEFAULT}
-    image: postgres:${POSTGRES_VERSION}
-    restart: unless-stopped
-    volumes:
-      - ./volumes/backup:/var/tmp/zammad
-      - ./volumes/storage:/opt/zammad/storage:ro
-      - ./volumes/var:/opt/zammad/var:ro
-      - ./scripts/backup.sh:/usr/local/bin/backup.sh:ro
+  # zammad-backup:
+  #   command: ["zammad-backup"]
+  #   depends_on:
+  #     - zammad-railsserver
+  #     - zammad-postgresql
+  #   entrypoint: /usr/local/bin/backup.sh
+  #   environment:
+  #     <<: *zammad-environment
+  #     BACKUP_TIME: "03:00"
+  #     HOLD_DAYS: "10"
+  #     TZ: ${TIMEZONE_DEFAULT}
+  #   image: postgres:${POSTGRES_VERSION}
+  #   restart: unless-stopped
+  #   volumes:
+  #     - ./volumes/backup:/var/tmp/zammad
+  #     - ./volumes/storage:/opt/zammad/storage:ro
+  #     - ./volumes/var:/opt/zammad/var:ro
+  #     - ./scripts/backup.sh:/usr/local/bin/backup.sh:ro
 
   zammad-elasticsearch:
     image: bitnami/elasticsearch:${ELASTICSEARCH_VERSION}
